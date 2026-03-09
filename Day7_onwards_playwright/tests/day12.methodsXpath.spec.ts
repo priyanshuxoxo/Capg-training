@@ -45,12 +45,12 @@ test("task5", async({page})=>{
     await page.locator("//span[@class='b3wTlE']").click();
     await page.locator("//input[@placeholder='Search for Products, Brands and More']").first().fill("phones")
     await page.locator("//button[@class='XFwMiH']").first().click();
-    const price=await page.locator("//div[@class='RG5Slk'  and .='realme P4 Power 5G (TransSilver, 128 GB)']/ancestor::div[@class='ZFwe0M row']/child::div[@class='col col-5-12 mao5dl']/descendant::div[@class='hZ3P6w DeU9vF']").textContent();
+    const price=await page.locator("//div[@class='RG5Slk'  and .='realme P4 Power 5G (TransSilver, 128 GB)/'] ").textContent();
 
 console.log(price);
    
 })
-test.only("task6", async({page})=>{
+test("task6", async({page})=>{
     await page.goto("https://www.amazon.in/")
     await page.locator("//input[@id='twotabsearchtextbox']").fill("phones");
 
@@ -60,3 +60,19 @@ test.only("task6", async({page})=>{
     
    await page.screenshot({path:"./screenshoot/amazon.png"})
 })
+
+
+test("task7", async ({page}) => {
+    await page.goto("https://www.flipkart.com/")
+    await page.locator("//span[@class='b3wTlE']").click();
+    await page.locator('//input[@class="nw1UBF v1zwn25"]').first().fill("phones");
+    await page.locator('//button[@class="XFwMiH"]').first().click();
+
+    let details = await page.locator("//div[@class='RG5Slk' and .='Google Pixel 9A (Porcelain, 256 GB)'] | //div[@class='RG5Slk' and .='Google Pixel 9A (Porcelain, 256 GB)']/ancestor::div[@class='jIjQ8S']/descendant::div[@class='hZ3P6w DeU9vF']").allTextContents();
+
+    console.log(details);
+})
+
+
+//? (|) -> this is union operator if you want to fetch both price and name using a single xPath then we use it 
+//? allTextContents()-> this method use to fetch all content when using union xpath
