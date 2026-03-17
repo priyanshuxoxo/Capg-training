@@ -1,4 +1,4 @@
-import test from "@playwright/test";
+import {test} from "@playwright/test";
 import path from "node:path";
 import fs from 'fs';
 import Example from "../PageObjectModel/example.page";
@@ -11,8 +11,8 @@ test("POM Example with Json",async({page})=>{
     
     for(let i of data){
         await page.goto(i.url);
-        await examplePage.usernameTF.fill(i.Username);
-        await examplePage.passwordTF.fill(i.Password);
-        await examplePage.submitBtn.click();
+        await examplePage.fillUsername(i.Username);
+        await examplePage.fillPassword(i.Password);
+        await examplePage.clickSubmit();
     }
 })
