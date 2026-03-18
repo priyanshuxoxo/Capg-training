@@ -33,6 +33,7 @@ test("task2",async({browser})=>{
     console.log("Text is: ",text);
     
 })
+
 test("task3",async({browser})=>{
     let context = await browser.newContext();
     let page = await context.newPage();
@@ -47,6 +48,7 @@ test("task3",async({browser})=>{
     console.log("Text is: ",text);
     
 })
+
 test.only("task4",async({browser})=>{
     let context = await browser.newContext();
     let page = await context.newPage();
