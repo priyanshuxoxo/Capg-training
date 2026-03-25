@@ -1,5 +1,7 @@
 {
   "compilerOptions": {
-    "types": ["node", "@playwright/test","mocha","jest"]
+    "types": ["node", "@playwright/test","mocha","jest"],
+    "resolveJsonModule": true,
+    "esModuleInterop": true
   }
 }
