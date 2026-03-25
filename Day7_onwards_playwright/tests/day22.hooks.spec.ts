@@ -1,7 +1,5 @@
 import {test} from "@playwright/test";
 
-
-
 //!Hooks-------------------------->>>>>>>>
 
 test.beforeAll("",async()=>{
